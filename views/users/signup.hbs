@@ -1,0 +1,47 @@
+<h1>Sign Up</h1>
+
+{{#if errorMessage}}
+    {{errorMessage}}
+{{/if}}
+
+<form action="/signup" method="POST">
+    <div class="account-info">
+        <div class="section-title">
+        <h2>PARENT INFO</h2>
+        </div>
+        <label for="">Full Name: </label>
+        <input type="text" name="parentName" placeholder="John Doe" class="input">
+        <label for="">Location: </label>
+        <input type="text" name="familyLocation" placeholder="Miami, FL" class="input">
+        <label for="">Image Upload: </label>
+        <input type="file" name="photo" class="input">
+    </div>
+
+    <div class="account-info">
+        <div class="section-title">
+        <h2>CHILD INFO</h2>
+        </div>
+        <label for="">Full Name: </label>
+        <input type="text" name="password" placeholder="password" class="input">
+        <label for="">Age: </label>
+        <input type="number" name="childAge" placeholder="0" class="input">
+        <label for="">Image Upload: </label>
+        <input type="file" name="photo" class="input">
+        <label for="">Eye Condition: </label>
+        <input type="text" name="childCondition" placeholder="microphthlamia" class="input">
+        <label for="">Eye Affected: </label>
+        <input type="text" name="childEye" placeholder="left" class="input">
+
+    <div class="account-info">
+        <div class="section-title">
+        <h2>ACCOUNT INFO</h2>
+        </div>
+        <label for="">Username: </label>
+        <input type="text" name="username" placeholder="username" class="input">
+        <label for="">Password: </label>
+        <input type="text" name="password" placeholder="********" class="input">
+
+    <button>Signup!</button>
+
+</form>
+

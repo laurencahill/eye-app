@@ -1,0 +1,53 @@
+<div>
+{{user.parentImage}}
+{{user.parentName}}
+{{user.familyLocation}}
+</div>
+
+<div>
+{{user.childImage}}
+{{user.childName}}
+{{user.childAge}}
+{{user.childCondition}}
+{{user.childEye}}
+</div>
+
+<div>
+
+<form action="/stories/update/{{story._id}}" method="POST">
+    
+<label for=""><h2>Tell us about your child's eye condition and need for artificial eyes: </h2></label>
+<input type="text" name="question1" value="{{story.question1}}" class="input">
+
+<label for=""><h2>How has your experience been with medical eye care: pediatric opthamologists, neonatal surgeons, oculoplastic surgeons, ocularists, etc?</h2></label>
+<input type="text" name="question2" value="{{story.question2}}" class="input">
+
+<label for=""><h2>What challenges has your child's eye condition encouraged your family to face?</h2></label>
+<input type="text" name="question3" value="{{story.question3}}" class="input">
+
+<label for=""><h2>What has it been like to socialize your child? Difficulties? Success stories?</h2></label>
+<input type="text" name="question4" value="{{story.question4}}" class="input">
+
+<label for=""><h2>Is your child in school? What has that experience been like?</h2></label>
+<input type="text" name="question5" value="{{story.question5}}" class="input">
+
+<label for=""><h2>Share a funny/silly/quirky artificial eye story (we all have them!)</h2></label>
+<input type="text" name="question6" value="{{story.question6}}" class="input">
+
+<label for=""><h2>Did your child undergo eye surgery? If so, what was that experience like? If not, why not? Was there a non-surgical alternative to treatment?</h2></label>
+<input type="text" name="question7" value="{{story.question7}}" class="input">
+
+<label for=""><h2>Have you or your child met other children and parents that are using artificial eyes?</h2></label>
+<input type="text" name="question8" value="{{story.question8}}" class="input">
+
+<label for=""><h2>If you can, please share a message to new parents of children needing artificial eyes. What advice could you give them? What do you wish you knew back then, when your child was first diagnosed?</h2></label>
+<input type="text" name="question9" value="{{story.question9}}" class="input">
+
+<label for=""><h2>Have we missed any part of your story? Please feel free to share anything else in the space below:</h2></label>
+<input type="text" name="question10" value="{{story.question10}}" class="input">
+
+<button>Save Changes</button>
+
+</div>
+
+</form>

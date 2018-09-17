@@ -1,0 +1,19 @@
+<h1>All Stories</h1>
+
+<hr> 
+{{#each theStoryList}}
+
+{{#each User}}
+{{this.childImage}}
+{{this.childName}}
+{{this.childAge}}
+{{this.childCondition}}
+{{this.childEye}}
+{{/each}}
+
+<div>
+<button><a href="{{this.story.id}}">See Story</a></button>
+<button type="submit"><a href="/stories/delete/{{this._id}}" method="POST">Delete This Celebrity</button>
+</div>
+
+{{/each}}
