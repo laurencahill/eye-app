@@ -4,13 +4,13 @@
     {{errorMessage}}
 {{/if}}
 
-<form action="/signup" method="POST">
+<form action="/signup/{{theUser._id}}" method="POST">
     <div class="account-info">
         <div class="section-title">
         <h2>PARENT INFO</h2>
         </div>
         <label for="">Full Name: </label>
-        <input type="text" name="parentName" placeholder="John Doe" class="input">
+        <input type="text" name="parentName" placeholder="John Doe" class="input" value={{theUser.parentName}}>
         <label for="">Location: </label>
         <input type="text" name="familyLocation" placeholder="Miami, FL" class="input">
         <label for="">Image Upload: </label>
@@ -22,13 +22,13 @@
         <h2>CHILD INFO</h2>
         </div>
         <label for="">Full Name: </label>
-        <input type="text" name="password" placeholder="password" class="input">
+        <input type="text" name="password" placeholder="password" class="input" value={{theUser.childName}}>
         <label for="">Age: </label>
         <input type="number" name="childAge" placeholder="0" class="input">
         <label for="">Image Upload: </label>
         <input type="file" name="photo" class="input">
         <label for="">Eye Condition: </label>
-        <input type="text" name="childCondition" placeholder="microphthlamia" class="input">
+        <input type="text" name="childCondition" placeholder="microphthlamia" class="input" value={{theUser.childCondition}}>
         <label for="">Eye Affected: </label>
         <input type="text" name="childEye" placeholder="left" class="input">
 
@@ -40,6 +40,8 @@
         <input type="text" name="username" placeholder="username" class="input">
         <label for="">Password: </label>
         <input type="text" name="password" placeholder="********" class="input">
+     <input type="checkbox" name="tandc" id="tandc" value="true"><label for="tandc"> I agree to the <a href="#">Terms and Conditions.</a></label> 
+     <input type="checkbox" name="pp" id="pp" value="true"><label for="tandc"> I agree to the <a href="#">Privacy Policy.</a></label> 
 
     <button>Signup!</button>
 

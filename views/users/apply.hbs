@@ -4,7 +4,7 @@
     {{errorMessage}}
 {{/if}}
 
-<form action="/apply" method="POST" enctype="multipart/form-data">
+<form action="/apply" method="POST">
 
     <label for="">Full Name: </label>
     <input type="text" name="parentName" placeholder="John Doe" class="input">
@@ -20,9 +20,6 @@
 
     <label for="">Why do you want to join this group? </label>
     <input type="text" name="parentReason" placeholder="My child has micropthalmia of the left eye, and wears a prosthetic. We are looking to connect with other parents who are experiencing..." class="input">
-
-   <input type="checkbox" name="tandc" id="tandc" value="true"><label for="tandc"> I agree to the <a href="#">Terms and Conditions.</a></label> 
-   <input type="checkbox" name="pp" id="pp" value="true"><label for="tandc"> I agree to the <a href="#">Privacy Policy.</a></label> 
 
     <button>Apply</button>
 

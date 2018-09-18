@@ -14,6 +14,16 @@ const userSchema = new Schema({
   childCondition: String,
   childEye: String,
   familyLocation: String,
+  role: {
+      type: String,
+      enum: ["admin", "user"],
+      default: "user"
+    },
+  acceptUser: {
+      type: Boolean,
+      default: false,
+    },
+  
 });
 
 const User = mongoose.model("User", userSchema);

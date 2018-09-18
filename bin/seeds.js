@@ -6,16 +6,24 @@ const dbName = 'eye-app';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
 const users = [
+//   {
+//     parentName: "Robin Cahill",
+//     parentImage: "Robin Cahill",
+//     childName: "Lauren Cahill",
+//     childImage: "Robin Cahill",
+//     childAge: 26,
+//     childCondition: "Unilateral Microphthalmia",
+//     childEye: "Left",
+//     familyLocation: "Miami, Florida, USA",
+//   },
   {
-    parentName: "Robin Cahill",
-    parentImage: "Robin Cahill",
-    childName: "Lauren Cahill",
-    childImage: "Robin Cahill",
-    childAge: 26,
-    childCondition: "Unilateral Microphthalmia",
-    childEye: "Left",
-    familyLocation: "Miami, Florida, USA",
-  },
+    username: "laurencahill",
+    password: "lauren",
+    emailAddress: "laurencahill@live.com",
+    role: "admin",
+    acceptUser: true,
+    fullAccess: true,
+  }
 ]
 
 const stories = [
@@ -44,10 +52,10 @@ User.create(users)
   })
 
 
-Story.create(stories)
-  .then((stories) => {
-    console.log(`Created ${stories.length} stories`)
-  })
+// Story.create(stories)
+//   .then((stories) => {
+//     console.log(`Created ${stories.length} stories`)
+//   })
 
   .catch((err) => {
     console.log(err)

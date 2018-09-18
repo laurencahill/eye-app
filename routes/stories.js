@@ -4,18 +4,26 @@ const Story     = require('../models/Story');
 
 //get stories dashboard
 router.get('/stories', (req, res, next) => {
-    Story.find()
-    .then((listOfStories) => {
-        res.render('stories/index', { theStoryList: listOfStories })
-    })
-    .catch((err) => {
-        next(err);
-    })
+    if (!req.user) {
+        res.redirect("/login")
+    } else {
+        Story.find()
+        .then((listOfStories) => {
+            res.render('stories/index', { theStoryList: listOfStories })
+        })
+        .catch((err) => {
+            next(err);
+        })
+    }
 })
 
 //create the user story
 router.get('/stories/create', (req, res, next) => {
-    res.render('stories/create');
+    if (!req.user) {
+        res.redirect("/login")
+    } else {
+        res.render('stories/create');
+    }
 })
 
 //post the user story
@@ -53,13 +61,17 @@ router.post("/stories/delete/:id", (req, res, next) => {
 
 //edit the user story
 router.get("/stories/edit/:id", (req, res, next) => {
-    Story.findById(req.params.id)
-    .then((theStory) => {
-        res.render('stories/edit', { story: theStory })
-    })
-    .catch((err) => {
-        next(err);
-    })
+    if (!req.user) {
+        res.redirect("/login")
+    } else {
+        Story.findById(req.params.id)
+        .then((theStory) => {
+            res.render('stories/edit', { story: theStory })
+        })
+        .catch((err) => {
+            next(err);
+        })
+    }
 })
 
 //post the edited user story 
@@ -86,13 +98,17 @@ router.post("/stories/update/:id", (req, res, next) => {
 
 //view a user story by ID
 router.get('/stories/:id', (req, res, next) => {
-    Story.findById(req.params.id)
-    .then((theStory) => {
-        res.render('stories/show', { story: theStory })
-    })
-    .catch((err) => {
-        next(err);
-    })
+    if (!req.user) {
+        res.redirect("/login")
+    } else {
+        Story.findById(req.params.id)
+        .then((theStory) => {
+            res.render('stories/show', { story: theStory })
+        })
+        .catch((err) => {
+            next(err);
+        })
+    }
 })
 
 module.exports = router;
