@@ -5,34 +5,42 @@
 <hr>
 <br>
 
-<div class="account-info">
-    <div class="section-title">
-    <h2>PARENT INFO</h2>
-    </div>
-    {{user.parentImage}}
-    <h2>Full Name: {{user.parentName}}</h2>
-    <h2>Location: {{user.familyLocation}}</h2>
+<form action="/users/parent/update/{{theUser._id}}" method="POST" enctype="multipart/form-data">
+    <div class="account-info">
+        <div class="section-title">
+        <h2>PARENT INFO</h2>
+        </div>
+        <label for=""><h2>Parent Image: </h2></label>
+        <input type="file" name="photo" class="input">
+        <label for=""><h2>Full Name: </h2></label>
+        <input type="text" name="parentName" class="input" value={{theUser.parentName}}>
+        <label for=""><h2>Location: </h2></label>
+        <input type="text" name="familyLocation" class="input" value={{theUser.familyLocation}}>
+        <label for=""><h2>Username: </h2></label>
+        <input type="text" name="username" class="input" value={{theUser.username}}>
+        <label for=""><h2>Password: </h2></label>
+        <input type="text" name="password" class="input" value={{theUser.password}}>
 </div>
+<button>SAVE INFO</button>
+</form>
 
+<form action="/users/child/update/{{theUser._id}}" method="POST" enctype="multipart/form-data"></form>
 <div class="account-info">
     <div class="section-title">
     <h2>CHILD INFO</h2>
     </div>
-    {{user.parentImage}}
-    <h2>Full Name: {{user.childName}}</h2>
-    <h2>Age: {{user.childAge}}</h2>
-    <h2>Eye Condition: {{user.childCondition}}</h2>
-    <h2>Eye Affected: {{user.childEye}}</h2>
+    <label for=""><h2>Child Image: </h2></label>
+    <input type="file" name="photo" class="input">
+    <label for=""><h2>Full Name: </h2></label>
+    <input type="text" name="childName" class="input" value={{theUser.childName}}>
+    <label for=""><h2>Age: </h2></label>
+    <input type="number" name="childAge" class="input" value={{theUser.childAge}}>
+    <label for=""><h2>Eye Condition: </h2></label>
+    <input type="text" name="childCondition" class="input" value={{theUser.childCondition}}>
+    <label for=""><h2>Eye Affected: </h2></label>
+    <input type="text" name="childEye" class="input" value={{theUser.childEye}}>
 </div>
-
-<div class="account-info">
-    <div class="section-title">
-    <h2>ACCOUNT INFO</h2>
-    </div>
-    <h2>Username: {{user.username}}</h2>
-    <h2>Password: {{user.password}}</h2>
-</div>
-
-<button>EDIT INFO</button>
+<button>SAVE INFO</button>
+</form>
 
 

@@ -12,7 +12,7 @@ const path           = require('path');
 // const ensureLogin  = require("connect-ensure-login");
 const flash          = require("connect-flash");
 const session        = require("express-session");
-// const bcrypt         = require("bcrypt");
+const bcrypt         = require("bcryptjs");
 const passport       = require("passport");
 const LocalStrategy  = require("passport-local").Strategy;
 const User           = require('./models/User')
@@ -49,24 +49,8 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-//Login setup
-app.use(session({
-  secret: "basic-auth-secret",
-  cookie: { maxAge: 60000 },
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 
-  })
-}));
 
-app.use(session({
-  secret: "our-passport-local-strategy-app",
-  resave: true,
-  saveUninitialized: true
-}));
 
-app.use(passport.initialize());
-app.use(passport.session());
 
 passport.serializeUser((user, cb) => {
   cb(null, user._id);
@@ -80,8 +64,12 @@ passport.deserializeUser((id, cb) => {
 });
 
 passport.use(new LocalStrategy((username, password, next) => {
+  console.log('pass: ', password)
   User.findOne({ username }, (err, user) => {
+    // console.log('dadadad :' , user.password)
+    // console.log('loggedin user: ', user)
     if (err) {
+      console.log('err in login: ', err)
       return next(err);
     }
     if (!user) {
@@ -101,6 +89,14 @@ app.use ((req, res, next)=> {
 
 app.use(flash());
 
+app.use(session({
+  secret: "our-passport-local-strategy-app",
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
@@ -112,5 +108,7 @@ const storiesRoutes = require('./routes/stories');
 app.use('/', storiesRoutes);
 const authRoutes = require('./routes/authRoutes');
 app.use('/', authRoutes);
+const userRoutes = require('./routes/users');
+app.use('/', userRoutes);
 
 module.exports = app;

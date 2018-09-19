@@ -1,5 +1,7 @@
 <div class="title-bar">
     <h1>Welcome to your Account Dashboard!</h1>
+     <form action="/users/delete/{{theUser._id}}" method="POST"><button>DELETE ACCOUNT</button></form>
+    <button><a href="/logout">LOGOUT</a></button>
 </div>
 
 <hr>
@@ -9,30 +11,28 @@
     <div class="section-title">
     <h2>PARENT INFO</h2>
     </div>
-    {{theUser.parentImage}}
+    <img src="{{theUser.parentImage}}">
     <h2>Full Name: {{theUser.parentName}}</h2>
     <h2>Location: {{theUser.familyLocation}}</h2>
+    <h2>Username: {{theUser.username}}</h2>
+    <h2>Password: {{theUser.password}}</h2>
+    <button><a href="/users/edit/{{theUser.id}}">EDIT PARENT INFO</a></button>
 </div>
-
+<hr>
+<br>
 <div class="account-info">
     <div class="section-title">
     <h2>CHILD INFO</h2>
     </div>
-    {{theUser.parentImage}}
+    <img src="{{theUser.childImage}}">
     <h2>Full Name: {{theUser.childName}}</h2>
     <h2>Age: {{theUser.childAge}}</h2>
     <h2>Eye Condition: {{theUser.childCondition}}</h2>
     <h2>Eye Affected: {{theUser.childEye}}</h2>
+    <button><a href="/users/edit/{{theUser.id}}">EDIT CHILD INFO</a></button>
 </div>
 
-<div class="account-info">
-    <div class="section-title">
-    <h2>ACCOUNT INFO</h2>
-    </div>
-    <h2>Username: {{theUser.username}}</h2>
-    <h2>Password: {{theUser.password}}</h2>
-</div>
-
-<button>EDIT INFO</button>
+<hr>
+<br>
 
 

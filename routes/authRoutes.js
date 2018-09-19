@@ -6,12 +6,16 @@ const bcryptSalt = 10;
 const passport   = require('passport');
 const flash      = require("connect-flash");
 const uploadCloud = require('../config/cloudinary.js');
+const multer     = require('multer');
 const nodemailer = require('nodemailer');
 
+//user sees application page
 router.get('/apply', (req, res, next)=>{
     res.render('users/apply')
 })
 
+
+//user fills out application, nodemailer sends email to inbox
 router.post('/apply', (req, res, next)=>{
     
     let { parentName, emailAddress, childName, childCondition, parentReason } = req.body;
@@ -58,27 +62,30 @@ router.post('/apply', (req, res, next)=>{
     })
 });
 
+//user gets confirm page
 router.get("/confirm", (req, res, next)=>{
     res.render("users/confirm")
 })
 
+//if approved (boolean), user is sent link to complete signup.
 router.get("/signup/:id", (req, res, next)=>{
     User.findById(req.params.id)
     .then(theUser => {
+        console.log('hello: ', theUser)
         if (theUser.acceptUser === false){
             res.redirect("/apply")
         } else {
             res.render("users/signup", {theUser: theUser})
         }
     })
-    .catch( err => console.log('error while rendering signup page', err))
-    
+    .catch( err => console.log('error while rendering signup page', err))   
 })
 
-router.post("/signup/:id", uploadCloud.single('photo'), (req, res, next)=>{
-    
+router.post("/signup/:id", uploadCloud.array('photo', 2), (req, res, next)=>{
     const theUser = req.params.id
+    const username = req.body.username
     const password = req.body.password
+
 
     if (username === "" || password === "") {
       req.flash('error', 'please specify a username and password to sign up')
@@ -86,27 +93,21 @@ router.post("/signup/:id", uploadCloud.single('photo'), (req, res, next)=>{
       return;
       }
 
-      User.findOne({ "email": email })
-      .then(user => {
-          if (user !== null) {
-            res.render("users/login", { message: req.flash("error") });
-        return;
-        }
-
       const salt = bcrypt.genSaltSync(bcryptSalt);
       const hashPass = bcrypt.hashSync(password, salt);
+      console.log(bcryptSalt, salt, hashPass)
 
-      User.create({
+      User.findByIdAndUpdate (theUser, {$set:{
           username:         req.body.username,
           password:         hashPass,
           parentName:       req.body.parentName,
-          parentImage:      req.body.parentImage,
+          parentImage:      req.file.url,
           childName:        req.body.childName,
-          childImage:       req.body.childImage,
+          childImage:       req.file.url,
           childAge:         req.body.childAge,
           childCondition:   req.body.childCondition,
           childEye:         req.body.childEye,
-          familyLocation:   req.body.familyLocation,
+          familyLocation:   req.body.familyLocation,}
       })
       .then((result)=>{
           res.redirect('/');
@@ -114,29 +115,29 @@ router.post("/signup/:id", uploadCloud.single('photo'), (req, res, next)=>{
       .catch((err)=>{
         res.render("users/signup", {message: req.flash("error") });
       })
-      })
-      .catch(error => {
-        next(error)
-      })
-    });
+})
 
 router.get('/login', (req, res, next)=>{
-    
     res.render('users/login', {message: req.flash('error')})
   })
 
-router.post('/login', passport.authenticate('local', {
-  successRedirect: "/",
-  failureRedirect: "/login",
-  failureFlash: true,
-  successFlash: true,
-  passReqToCallback: true
-}));
-
-router.get("/logout", (req, res, next) => {
-    req.logout();
-    res.redirect('/');
+router.post('/login', (req, res, next)=>{
+    passport.authenticate('local', (err, user, failureData) => {
+        if(err){
+        }
+        if(!user){
+        }
+        req.login(user, (err) => {
+        res.redirect('/users/account')
+        })
+        }) (req,res,next)
+        });
     
-  });
-
+    router.get("/logout", (req, res, next) => {
+        req.logout();
+        res.redirect('/');
+        
+    });
+    
 module.exports = router;
+    

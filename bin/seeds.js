@@ -17,12 +17,11 @@ const users = [
 //     familyLocation: "Miami, Florida, USA",
 //   },
   {
-    username: "laurencahill",
-    password: "lauren",
-    emailAddress: "laurencahill@live.com",
+    username: "test",
+    password: "test",
+    emailAddress: "test@test.com",
     role: "admin",
     acceptUser: true,
-    fullAccess: true,
   }
 ]
 

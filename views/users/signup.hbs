@@ -4,7 +4,7 @@
     {{errorMessage}}
 {{/if}}
 
-<form action="/signup/{{theUser._id}}" method="POST">
+<form action="/signup/{{theUser._id}}" method="POST" enctype="multipart/form-data">
     <div class="account-info">
         <div class="section-title">
         <h2>PARENT INFO</h2>
@@ -22,7 +22,7 @@
         <h2>CHILD INFO</h2>
         </div>
         <label for="">Full Name: </label>
-        <input type="text" name="password" placeholder="password" class="input" value={{theUser.childName}}>
+        <input type="text" name="childName" placeholder="childName" class="input" value={{theUser.childName}}>
         <label for="">Age: </label>
         <input type="number" name="childAge" placeholder="0" class="input">
         <label for="">Image Upload: </label>
