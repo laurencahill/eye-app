@@ -1,7 +1,8 @@
 <div class="title-bar">
     <h1>Welcome to your Account Dashboard!</h1>
      <form action="/users/delete/{{theUser._id}}" method="POST"><button>DELETE ACCOUNT</button></form>
-    <button><a href="/logout">LOGOUT</a></button>
+    <a href="/logout"><button>LOGOUT</button></a>
+    <a href="/stories"><button>SEE ALL STORIES</button></a>
 </div>
 
 <hr>
@@ -15,8 +16,8 @@
     <h2>Full Name: {{theUser.parentName}}</h2>
     <h2>Location: {{theUser.familyLocation}}</h2>
     <h2>Username: {{theUser.username}}</h2>
-    <h2>Password: {{theUser.password}}</h2>
-    <button><a href="/users/edit/{{theUser.id}}">EDIT PARENT INFO</a></button>
+    {{!-- <h2>Password: {{theUser.password}}</h2> --}}
+    <a href="/users/edit-parent/{{theUser.id}}"><button>EDIT PARENT INFO</button></a>
 </div>
 <hr>
 <br>
@@ -29,7 +30,7 @@
     <h2>Age: {{theUser.childAge}}</h2>
     <h2>Eye Condition: {{theUser.childCondition}}</h2>
     <h2>Eye Affected: {{theUser.childEye}}</h2>
-    <button><a href="/users/edit/{{theUser.id}}">EDIT CHILD INFO</a></button>
+    <a href="/users/edit-child/{{theUser.id}}"><button>EDIT CHILD INFO</button></a>
 </div>
 
 <hr>

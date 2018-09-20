@@ -1,38 +1,77 @@
 <div>
-{{user.parentImage}}
-{{user.parentName}}
-{{user.familyLocation}}
+{{theUser.parentImage}}
+{{theUser.parentName}}
+{{theUser.familyLocation}}
 </div>
 
 <div>
-{{user.childImage}}
-{{user.childName}}
-{{user.childAge}}
-{{user.childCondition}}
-{{user.childEye}}
+{{theUser.childImage}}
+{{theUser.childName}}
+{{theUser.childAge}}
+{{theUser.childCondition}}
+{{theUser.childEye}}
 </div>
 
-<button>View All Stories</button>
+<button><a href="/stories">View All Stories</a></button>
 
 <div>
-<h2>Tell us about your child's eye condition and need for artificial eyes:</h2>
+
+<div class="q-and-a">
+<h4>Tell us about your child's eye condition and need for artificial eyes:</h4>
 <span>{{story.question1}}</span>
-<h2>How has your experience been with medical eye care: pediatric opthamologists, neonatal surgeons, oculoplastic surgeons, ocularists, etc?</h2>
+</div>
+
+<div class="q-and-a">
+<h4>How has your experience been with medical eye care: pediatric opthamologists, neonatal surgeons, oculoplastic surgeons, ocularists, etc?</h4>
 <span>{{story.question2}}</span>
-<h2>What challenges has your child's eye condition encouraged your family to face?</h2>
+</div>
+
+<div class="q-and-a">
+<h4>What challenges has your child's eye condition encouraged your family to face?</h4>
 <span>{{story.question3}}</span>
-<h2>What has it been like to socialize your child? Difficulties? Success stories?</h2>
+</div>
+
+<div class="q-and-a">
+<h4>What has it been like to socialize your child? Difficulties? Success stories?</h4>
 <span>{{story.question4}}</span>
-<h2>Is your child in school? What has that experience been like?</h2>
+</div>
+
+<div class="q-and-a">
+<h4>Is your child in school? What has that experience been like?</h4>
 <span>{{story.question5}}</span>
-<h2>Share a funny/silly/quirky artificial eye story (we all have them!):</h2>
+</div>
+
+<div class="q-and-a">
+<h4>Share a funny/silly/quirky artificial eye story (we all have them!):</h4>
 <span>{{story.question6}}</span>
-<h2>Did your child undergo eye surgery? If so, what was that experience like? If not, why not? Was there a non-surgical alternative to treatment?</h2>
+</div>
+
+<div class="q-and-a">
+<h4>Did your child undergo eye surgery? If so, what was that experience like? If not, why not? Was there a non-surgical alternative to treatment?</h4>
 <span>{{story.question7}}</span>
-<h2>Have you or your child met other children and parents that are using artificial eyes?</h2>
+</div>
+
+<div class="q-and-a">
+<h4>Have you or your child met other children and parents that are using artificial eyes?</h4>
 <span>{{story.question8}}</span>
-<h2>If you can, please share a message to new parents of children needing artificial eyes. What advice could you give them? What do you wish you knew back then, when your child was first diagnosed?</h2>
+</div>
+
+<div class="q-and-a">
+<h4>If you can, please share a message to new parents of children needing artificial eyes. What advice could you give them? What do you wish you knew back then, when your child was first diagnosed?</h4>
 <span>{{story.question9}}</span>
-<h2>Have we missed any part of your story? Please feel free to share anything else in the space below:</h2>
+</div>
+
+<div class="q-and-a">
+<h4>Have we missed any part of your story? Please feel free to share anything else in the space below:</h4>
 <span>{{story.question10}}</span>
+</div>
+
+</div>
+<div>
+    {{#if isOwner}}
+    <a href="/stories/edit/{{story._id}}">Edit</a>
+    <form action="/stories/delete/{{story._id}}" method="post">
+        <button type="submit">Delete</button>
+    </form>
+    {{/if}}
 </div>

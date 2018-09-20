@@ -1,5 +1,5 @@
 <div>
-    <h1>Welcome to the Story Portal!</h1>
+    <h1>Welcome {{theUser.username}} to the Story Portal!</h1>
 </div>
 
 <div class="account-info">
@@ -7,7 +7,7 @@
     <h2>SEE ACCOUNT DETAILS</h2>
     </div>
     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-    <button> <a href="/users/account">GO TO ACCOUNT</a></button>
+    <a href="/users/account"><button>GO TO ACCOUNT</button></a>
 </div>
 
 <div class="account-info">
@@ -15,7 +15,7 @@
     <h2>VIEW ALL STORIES</h2>
     </div>
     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-    <button> <a href="/stories/index">GO TO STORIES</a></button>
+     <a href="/stories/"><button>GO TO STORIES</button></a>
 </div>
 
 <div class="account-info">
@@ -23,5 +23,12 @@
     <h2>VIEW YOUR STORY</h2>
     </div>
     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-    <button> <a href="/stories/edit">GO TO STORY</a></button>
+    
+    {{#if hasStory}}
+       <a href="/stories/edit/{{theStory._id}}"> <button> EDIT STORY</button> </a>
+    {{else }}
+         <a href="/stories/create"><button>CREATE STORY</button> </a>
+    {{/if }}
+
+
 </div>

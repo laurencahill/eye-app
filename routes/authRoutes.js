@@ -101,9 +101,9 @@ router.post("/signup/:id", uploadCloud.array('photo', 2), (req, res, next)=>{
           username:         req.body.username,
           password:         hashPass,
           parentName:       req.body.parentName,
-          parentImage:      req.file.url,
+        //   parentImage:      req.file.url,
           childName:        req.body.childName,
-          childImage:       req.file.url,
+        //   childImage:       req.file.url,
           childAge:         req.body.childAge,
           childCondition:   req.body.childCondition,
           childEye:         req.body.childEye,
@@ -128,7 +128,7 @@ router.post('/login', (req, res, next)=>{
         if(!user){
         }
         req.login(user, (err) => {
-        res.redirect('/users/account')
+        res.redirect('/users')
         })
         }) (req,res,next)
         });

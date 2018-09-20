@@ -14,6 +14,7 @@ const userSchema = new Schema({
   childCondition: String,
   childEye: String,
   familyLocation: String,
+  story: String,
   role: {
       type: String,
       enum: ["admin", "user"],
@@ -21,9 +22,9 @@ const userSchema = new Schema({
     },
   acceptUser: {
       type: Boolean,
-      default: false,
+      default: true,
     },
-  
+  hasStory: { type: Boolean, default: false }
 });
 
 const User = mongoose.model("User", userSchema);

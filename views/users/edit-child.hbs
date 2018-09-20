@@ -1,0 +1,24 @@
+<div class="title-bar">
+    <h1>Welcome to your Account Dashboard!</h1>
+</div>
+
+<hr>
+<br>
+<form action="/users/child/update/{{theUser._id}}" method="POST" enctype="multipart/form-data">
+<div class="account-info">
+    <div class="section-title">
+    <h2>CHILD INFO</h2>
+    </div>
+    <label for=""><h2>Child Image: </h2></label>
+    <input type="file" name="photo" class="input">
+    <label for=""><h2>Full Name: </h2></label>
+    <input type="text" name="childName" class="input" value={{theUser.childName}}>
+    <label for=""><h2>Age: </h2></label>
+    <input type="number" name="childAge" class="input" value={{theUser.childAge}}>
+    <label for=""><h2>Eye Condition: </h2></label>
+    <input type="text" name="childCondition" class="input" value={{theUser.childCondition}}>
+    <label for=""><h2>Eye Affected: </h2></label>
+    <input type="text" name="childEye" class="input" value={{theUser.childEye}}>
+</div>
+<button>SAVE INFO</button>
+</form>

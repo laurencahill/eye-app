@@ -1,0 +1,26 @@
+<div class="title-bar">
+    <h1>Welcome to your Account Dashboard!</h1>
+</div>
+
+<hr>
+<br>
+
+<form action="/users/parent/update/{{theUser._id}}" method="POST" enctype="multipart/form-data">
+    <div class="account-info">
+        <div class="section-title">
+        <h2>PARENT INFO</h2>
+        </div>
+        <label for=""><h2>Parent Image: </h2></label>
+        <input type="file" name="photo" class="input">
+        <label for=""><h2>Full Name: </h2></label>
+        <input type="text" name="parentName" class="input" value={{theUser.parentName}}>
+        <label for=""><h2>Location: </h2></label>
+        <input type="text" name="familyLocation" class="input" value={{theUser.familyLocation}}>
+        <label for=""><h2>Username: </h2></label>
+        <input type="text" name="username" class="input" value={{theUser.username}}>
+        <label for=""><h2>Password: </h2></label>
+        <input type="text" name="password" class="input">
+</div>
+<button>SAVE INFO</button>
+</form>
+

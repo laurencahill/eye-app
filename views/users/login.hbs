@@ -1,20 +1,25 @@
-<h1>Login</h1>
 
-<form action="/login" method="POST">
-<div>
-  <label for="username">Username: </label>
-  <input type="text" name="username" placeholder="username" class="input">
-  <label for="password">Password: </label>
-  <input type="password" name="password" placeholder="password" class="input">
+<div class="page-info">
+<div class="container-info">
+<img src="images/logo.png" class="logo" alt="">
+<img src="images/tagline.png" class="tagline" alt="">
 
-  {{#if errorMessage }}
-    <div class="error-message">{{errorMessage}}</div>
-  {{/if}}
-  <button>Login</button>
+<form action="/login" method="POST" class="form-container">
+<div class="login-column">
+<div class="login-row">
+  <label for="username" class="label">Username </label>
+  <input type="text" name="username" placeholder="username" class="login-input">
+  </div>
+  <div class="login-row">
+  <label for="password" class="label">Password </label>
+  <input type="password" name="password" placeholder="password" class="login-input">
+  </div>
 </div>
-
-<div>
-  <p>Don't have an account? <a href="/apply">Apply today!</a></p>
-</div>
-
+  <a href="/login"><button class="btn btn-dark btn-block">LOGIN TO ACCOUNT</button></a>
 </form>
+
+<p class="p-sm">Don't have an account? <a href="/apply">Apply today!</a></p>
+</div>
+</div>
+
+
