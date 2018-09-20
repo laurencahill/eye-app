@@ -17,6 +17,7 @@ router.get('/apply', (req, res, next)=>{
 
 //user fills out application, nodemailer sends email to inbox
 router.post('/apply', (req, res, next)=>{
+    console.log("-------", 'beginnign of the route')
     
     let { parentName, emailAddress, childName, childCondition, parentReason } = req.body;
 
@@ -36,7 +37,7 @@ router.post('/apply', (req, res, next)=>{
         
     })
     .then((result)=>{
-        console.log('what is result: ', result)
+        console.log('what is result: =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=', result)
         let transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {

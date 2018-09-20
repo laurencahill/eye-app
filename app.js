@@ -20,7 +20,7 @@ const MongoStore     = require('connect-mongo')(session);
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/eye-app')
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to Mongo!')
   })
