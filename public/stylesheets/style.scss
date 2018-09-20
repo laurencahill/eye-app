@@ -70,7 +70,6 @@ a {
   font-weight: bold;
   font-size: 18px;
   text-transform: uppercase;
-  width: 50px;
 }
 
 .btn-link {
@@ -217,7 +216,7 @@ a {
 
 .nav-bar {
   display: flex;
-  flex-direction:: row;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
@@ -227,7 +226,7 @@ a {
   top: 0;
   left: 0;
   z-index: 99;
-  background-color: #d3d3d3;
+  background-color: white;
 }
 
 

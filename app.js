@@ -49,9 +49,6 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
-
-
 passport.serializeUser((user, cb) => {
   cb(null, user._id);
 });
@@ -100,7 +97,6 @@ app.use(passport.session());
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
-
 
 const index = require('./routes/index');
 app.use('/', index);
