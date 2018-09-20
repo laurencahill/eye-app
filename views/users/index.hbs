@@ -1,34 +1,62 @@
-<div>
-    <h1>Welcome {{theUser.username}} to the Story Portal!</h1>
+
+<div class="nav-bar">
+    <div class="nav-logos">
+<img src="/images/logo.png" class="logo-inner" alt="">
+<img src="/images/tagline.png" class="tagline-inner" alt="">
+    </div>
+
+<a href="/stories" class="btn-link" style="text-decoration: none"><button class="btn btn-light">STORIES</button> </a>
+<a href="/users/account" class="btn-link" style="text-decoration: none"><button class="btn btn-light">ACCOUNT</button> </a>
+<a href="/logout" class="btn-link" style="text-decoration: none"><button class="btn btn-light">LOGOUT</button> </a>
 </div>
 
-<div class="account-info">
-    <div class="section-title">
-    <h2>SEE ACCOUNT DETAILS</h2>
-    </div>
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-    <a href="/users/account"><button>GO TO ACCOUNT</button></a>
+<div class="title-bar">
+    <h2>Welcome back,</h2><span class="welcome"> {{theUser.username}}</span>
 </div>
 
+<div class="page-content">
+<div class="container-info">
 <div class="account-info">
+    
     <div class="section-title">
-    <h2>VIEW ALL STORIES</h2>
+    <div class="account-icon">
+    <i class="fas fa-key"></i>
     </div>
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-     <a href="/stories/"><button>GO TO STORIES</button></a>
+    <span class="page-title">SEE ACCOUNT DETAILS</span>
+    </div>
+    <span class="title-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    <a href="/users/account" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">GO TO ACCOUNT</button></a>
+</div>
 </div>
 
+<div class="container-info">
 <div class="account-info">
-    <div class="section-title">
-    <h2>VIEW YOUR STORY</h2>
+    <div class="account-icon">
+    <i class="fas fa-users"></i>
     </div>
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    <div class="section-title">
+    <span class="page-title">VIEW ALL STORIES</span>
+    </div>
+    <span class="title-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+     <a href="/stories/" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">GO TO STORIES</button></a>
+</div>
+</div>
+
+<div class="container-info">
+<div class="account-info">
+    <div class="account-icon">
+    <i class="fas fa-user"></i>
+    </div>
+    <div class="section-title">
+    <span class="page-title">VIEW YOUR STORY</span>
+    </div>
+    <span class="title-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
     
     {{#if hasStory}}
-       <a href="/stories/edit/{{theStory._id}}"> <button> EDIT STORY</button> </a>
+       <a href="/stories/edit/{{theStory._id}}" class="btn-link" style="text-decoration: none"> <button class="btn btn-dark btn-block"> EDIT STORY</button> </a>
     {{else }}
-         <a href="/stories/create"><button>CREATE STORY</button> </a>
+         <a href="/stories/create" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">CREATE STORY</button> </a>
     {{/if }}
-
-
+</div>
+</div>
 </div>

@@ -1,31 +1,33 @@
 <div class="page-info">
 <div class="container-info">
-<img src="images/logo.png" class="logo" alt="">
-<img src="images/tagline.png" class="tagline" alt="">
+<img src="/images/logo.png" class="logo" alt="">
+<img src="/images/tagline.png" class="tagline" alt="">
 
-<form action="/apply" method="POST" class="form-container">
-<div class="login-column">
+<form action="/apply" method="POST" class="apply-container">
 <div class="login-column">
   <label for="parentName" class="label-full">Full Name </label>
-    <input type="text" name="parentName" placeholder="John Doe" class="login-input">
+    <input type="text" name="parentName" placeholder="John Doe" class="apply-input">
 </div>
 <div class="login-column">
   <label for="emailAddress" class="label-full">Email Address </label>
-  <input type="email" name="emailAddress" placeholder="johndoe@example.com" class="login-input">
+  <input type="email" name="emailAddress" placeholder="johndoe@example.com" class="apply-input">
 </div>
 <div class="login-column">
-  <label for="childName" class="label-full">Child's Name: </label>
-  <input type="text" name="childName" placeholder="Susan Doe" class="login-input">
+  <label for="childName" class="label-full">Child's Name </label>
+  <input type="text" name="childName" placeholder="Susan Doe" class="apply-input">
 </div>
 <div class="login-column">
   <label for="childCondition" class="label-full">Child's Eye Condition </label>
-  <input type="text" name="childCondition" placeholder="Microphthalmia" class="login-input">
+  <input type="text" name="childCondition" placeholder="Microphthalmia" class="apply-input">
 </div>
 <div class="login-column">
   <label for="parentReason" class="label-full">Why do you want to join this group? </label>
-  <input type="text" name="parentReason" placeholder="My child has micropthalmia of the left eye, and wears a prosthetic. We are looking to connect with other parents who are experiencing..." class="login-input">
+  <textarea name="parentReason" rows="10" placeholder="My child has micropthalmia of the left eye, and wears a prosthetic. We are looking to connect with other parents who are experiencing..." class="apply-textarea"></textarea>
 </div>
+<div>
   <a href="/confirm" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">Apply</button></a>
+</div>
+<p class="p-sm"><a href="/">Back to Home</a></p>
 </div>
 </form>
 

@@ -1,39 +1,80 @@
+
+<div class="nav-bar">
+    <div class="nav-logos">
+<img src="/images/logo.png" class="logo-inner" alt="">
+<img src="/images/tagline.png" class="tagline-inner" alt="">
+    </div>
+
+<a href="/stories" class="btn-link" style="text-decoration: none">Stories </a>
+<a href="/users/account" class="btn-link" style="text-decoration: none">Account </a>
+<a href="/logout" class="btn-link" style="text-decoration: none">Login </a>
+</div>
+
 <div class="title-bar">
-    <h1>Welcome to your Account Dashboard!</h1>
-     <form action="/users/delete/{{theUser._id}}" method="POST"><button>DELETE ACCOUNT</button></form>
-    <a href="/logout"><button>LOGOUT</button></a>
-    <a href="/stories"><button>SEE ALL STORIES</button></a>
+    <h2>Welcome back,</h2><span class="welcome"> {{theUser.username}}</span>
 </div>
 
-<hr>
-<br>
+<div class="page-content">
 
-<div class="account-info">
-    <div class="section-title">
-    <h2>PARENT INFO</h2>
-    </div>
+<div class="container-info">
+    <div class="img-container">
+    <div class="img">
     <img src="{{theUser.parentImage}}">
-    <h2>Full Name: {{theUser.parentName}}</h2>
-    <h2>Location: {{theUser.familyLocation}}</h2>
-    <h2>Username: {{theUser.username}}</h2>
-    {{!-- <h2>Password: {{theUser.password}}</h2> --}}
-    <a href="/users/edit-parent/{{theUser.id}}"><button>EDIT PARENT INFO</button></a>
-</div>
-<hr>
-<br>
-<div class="account-info">
-    <div class="section-title">
-    <h2>CHILD INFO</h2>
     </div>
-    <img src="{{theUser.childImage}}">
-    <h2>Full Name: {{theUser.childName}}</h2>
-    <h2>Age: {{theUser.childAge}}</h2>
-    <h2>Eye Condition: {{theUser.childCondition}}</h2>
-    <h2>Eye Affected: {{theUser.childEye}}</h2>
-    <a href="/users/edit-child/{{theUser.id}}"><button>EDIT CHILD INFO</button></a>
+    </div>
+    
+    <div class="section-title">
+    <span class="page-title">Parent Information</span>
+    </div>
+
+    <div class="login-column">
+    <span class="label-full">Full Name</span><span class="apply-input">{{theUser.parentName}}</span>
+    </div>
+
+    <div class="login-column">
+    <span class="label-full">Location</span><span class="apply-input">{{theUser.familyLocation}}</span>
+    </div>
+
+    <div class="login-column">
+    <span class="label-full">Username</span><span class="apply-input">{{theUser.username}}</span>
+    </div>
+
+     <div class="login-column">
+    <span class="label-full">Password</span><span class="apply-input">*******</span>
+    </div>
+
+    <a href="/users/edit-parent/{{theUser.id}}" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">EDIT PARENT INFO</button></a>
 </div>
 
-<hr>
-<br>
+<div class="container-info">
+    
+    <div class="img-container">
+    <div class="img">
+    <img src="{{theUser.childImage}}">
+    </div>
+    </div>
 
+    <div class="section-title">
+    <span class="page-title">Child Information</span>
+    </div>
 
+    <div class="login-column">
+    <span class="label-full">Full Name</span><span class="apply-input">{{theUser.childName}}</span>
+    </div>
+
+    <div class="login-column">
+    <span class="label-full">Age</span> <span class="apply-input"> {{theUser.childAge}}</span>
+    </div>
+    
+    <div class="login-column">
+    <span class="label-full">Eye Condition</span><span class="apply-input">  {{theUser.childCondition}}</span>
+    </div>
+
+    <div class="login-column">
+    <span class="label-full">Eye Affected </span><span class="apply-input"> {{theUser.childEye}}</span>
+    </div>
+    
+    <a href="/users/edit-child/{{theUser.id}}" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">EDIT CHILD INFO</button></a>
+</div>
+
+</div>
