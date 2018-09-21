@@ -1,26 +1,57 @@
-<div class="title-bar">
-    <h1>Welcome to your Account Dashboard!</h1>
+<div class="nav-bar">
+    <div class="nav-logos">
+<img src="/images/logo.png" class="logo-inner" alt="">
+<img src="/images/tagline.png" class="tagline-inner" alt="">
+    </div>
+    <div class="nav-links">
+<a href="http://www.laurenseyes.com" class="btn-link nav-link" style="text-decoration: none">TLE Home </a>
+<a href="/stories" class="btn-link nav-link" style="text-decoration: none">Stories </a>
+<a href="/users" class="btn-link nav-link" style="text-decoration: none">Dashboard </a>
+<a href="/logout" class="btn-link nav-link" style="text-decoration: none">Logout </a>
+</div>
 </div>
 
-<hr>
-<br>
+<div class="page-content">
+<div class="container-info">
+
+
+    <div class="img-container">
+    <div class="img">
+    <img src="{{theUser.parentImage}}">
+    </div>
+    </div>
 
 <form action="/users/parent/update/{{theUser._id}}" method="POST" enctype="multipart/form-data">
     <div class="account-info">
+       
         <div class="section-title">
-        <h2>PARENT INFO</h2>
+        <span class="page-title">Parent Information</span>
         </div>
-        <label for=""><h2>Parent Image: </h2></label>
-        <input type="file" name="photo" class="input">
-        <label for=""><h2>Full Name: </h2></label>
-        <input type="text" name="parentName" class="input" value={{theUser.parentName}}>
-        <label for=""><h2>Location: </h2></label>
-        <input type="text" name="familyLocation" class="input" value={{theUser.familyLocation}}>
-        <label for=""><h2>Username: </h2></label>
-        <input type="text" name="username" class="input" value={{theUser.username}}>
-        <label for=""><h2>Password: </h2></label>
-        <input type="text" name="password" class="input">
-</div>
-<button>SAVE INFO</button>
+
+        <div class="login-column">
+        <input type="file" name="photo" class="input apply-input">
+        </div>
+
+        <div class="login-column">
+        <span class="label-full">Name</span><input type="text" name="parentName" class="input apply-input" value={{theUser.parentName}}>
+        </div>
+
+        <div class="login-column">
+        <span class="label-full">Location</span><input type="text" name="familyLocation" class="input apply-input" value={{theUser.familyLocation}}>
+        </div>
+
+        <div class="login-column">
+        <span class="label-full">Username</span><input type="text" name="username" class="input apply-input" value={{theUser.username}}>
+        </div>
+
+        <div class="login-column">
+        <span class="label-full">Password</span><input type="text" name="password" class="input apply-input">
+        </div>
+
+    </div>
+<button class="btn btn-dark btn-block" style="text-decoration: none">SAVE INFO</button>
 </form>
+
+</div>
+</div>
 

@@ -4,14 +4,16 @@
 <img src="/images/logo.png" class="logo-inner" alt="">
 <img src="/images/tagline.png" class="tagline-inner" alt="">
     </div>
-
-<a href="/stories" class="btn-link" style="text-decoration: none">Stories </a>
-<a href="/users/account" class="btn-link" style="text-decoration: none">Account </a>
-<a href="/logout" class="btn-link" style="text-decoration: none">Login </a>
+    <div class="nav-links">
+<a href="http://www.laurenseyes.com" class="btn-link nav-link" style="text-decoration: none">TLE Home </a>
+<a href="/stories" class="btn-link nav-link" style="text-decoration: none">Stories </a>
+<a href="/users" class="btn-link nav-link" style="text-decoration: none">Dashboard </a>
+<a href="/logout" class="btn-link nav-link" style="text-decoration: none">Logout </a>
+</div>
 </div>
 
 <div class="title-bar">
-    <h2>Welcome back,</h2><span class="welcome"> {{theUser.username}}</span>
+    <h2>Welcome back,</h2><span class="welcome"> {{theUser.username}} </span><h2>!</h2>
 </div>
 
 <div class="page-content">
@@ -22,9 +24,9 @@
     <div class="account-icon">
     <i class="fas fa-key"></i>
     </div>
-    <span class="page-title">SEE ACCOUNT DETAILS</span>
+    <span class="page-title">See Account Details</span>
     </div>
-    <span class="title-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    <span class="page-description">Manage content, upload media and update login credentials.</span>
     <a href="/users/account" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">GO TO ACCOUNT</button></a>
 </div>
 </div>
@@ -35,9 +37,9 @@
     <i class="fas fa-users"></i>
     </div>
     <div class="section-title">
-    <span class="page-title">VIEW ALL STORIES</span>
+    <span class="page-title">View All Stories</span>
     </div>
-    <span class="title-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    <span class="page-description">Read other eye stories and connect with the greater community.</span>
      <a href="/stories/" class="btn-link" style="text-decoration: none"><button class="btn btn-dark btn-block">GO TO STORIES</button></a>
 </div>
 </div>
@@ -48,9 +50,9 @@
     <i class="fas fa-user"></i>
     </div>
     <div class="section-title">
-    <span class="page-title">VIEW YOUR STORY</span>
+    <span class="page-title">Share Your Story</span>
     </div>
-    <span class="title-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    <span class="page-description">Share about your family's experience with artificial eyes.</span>
     
     {{#if hasStory}}
        <a href="/stories/edit/{{theStory._id}}" class="btn-link" style="text-decoration: none"> <button class="btn btn-dark btn-block"> EDIT STORY</button> </a>
@@ -60,3 +62,10 @@
 </div>
 </div>
 </div>
+
+{{!-- <div class="foot-bar">
+<div class="nav-links">
+<a href="http://www.laurenseyes.com" class="btn-link nav-link-foot" style="text-decoration: none">Terms and Conditions </a>
+<a href="/stories" class="btn-link nav-link-foot" style="text-decoration: none">Privacy Policy </a>
+</div>
+</div> --}}

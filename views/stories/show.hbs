@@ -1,77 +1,95 @@
-<div>
-{{theUser.parentImage}}
-{{theUser.parentName}}
-{{theUser.familyLocation}}
+<div class="nav-bar">
+    <div class="nav-logos">
+<img src="/images/logo.png" class="logo-inner" alt="">
+<img src="/images/tagline.png" class="tagline-inner" alt="">
+    </div>
+    <div class="nav-links">
+<a href="http://www.laurenseyes.com" class="btn-link nav-link" style="text-decoration: none">TLE Home </a>
+<a href="/stories" class="btn-link nav-link" style="text-decoration: none">Stories </a>
+<a href="/users" class="btn-link nav-link" style="text-decoration: none">Dashboard </a>
+<a href="/logout" class="btn-link nav-link" style="text-decoration: none">Logout </a>
 </div>
-
-<div>
-{{theUser.childImage}}
-{{theUser.childName}}
-{{theUser.childAge}}
-{{theUser.childCondition}}
-{{theUser.childEye}}
-</div>
-
-<button><a href="/stories">View All Stories</a></button>
-
-<div>
-
-<div class="q-and-a">
-<h4>Tell us about your child's eye condition and need for artificial eyes:</h4>
-<span>{{story.question1}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>How has your experience been with medical eye care: pediatric opthamologists, neonatal surgeons, oculoplastic surgeons, ocularists, etc?</h4>
-<span>{{story.question2}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>What challenges has your child's eye condition encouraged your family to face?</h4>
-<span>{{story.question3}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>What has it been like to socialize your child? Difficulties? Success stories?</h4>
-<span>{{story.question4}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>Is your child in school? What has that experience been like?</h4>
-<span>{{story.question5}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>Share a funny/silly/quirky artificial eye story (we all have them!):</h4>
-<span>{{story.question6}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>Did your child undergo eye surgery? If so, what was that experience like? If not, why not? Was there a non-surgical alternative to treatment?</h4>
-<span>{{story.question7}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>Have you or your child met other children and parents that are using artificial eyes?</h4>
-<span>{{story.question8}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>If you can, please share a message to new parents of children needing artificial eyes. What advice could you give them? What do you wish you knew back then, when your child was first diagnosed?</h4>
-<span>{{story.question9}}</span>
-</div>
-
-<div class="q-and-a">
-<h4>Have we missed any part of your story? Please feel free to share anything else in the space below:</h4>
-<span>{{story.question10}}</span>
-</div>
-
 </div>
 <div>
+{{story.owner.parentImage}}
+{{story.owner.parentName}}
+{{story.owner.familyLocation}}
+</div>
+
+<div>
+{{story.owner.childImage}}
+{{story.owner.childName}}
+{{story.owner.childAge}}
+{{story.owner.childCondition}}
+{{story.owner.childEye}}
+</div>
+<div class="page-content">
+
+<div class="story-container-info">
+
+<div class="story-column">
+<span class="label-story-full">Tell us about your child's eye condition and need for artificial eyes:</span>
+<span name="question1" rows="5" class="story-textarea-flat">{{story.question1}}</span>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">How has your experience been with medical eye care: pediatric opthamologists, neonatal surgeons, oculoplastic surgeons, ocularists, etc?</span>
+<span name="question2" rows="5" class="story-textarea-flat">{{story.question2}}</span>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">What challenges has your child's eye condition encouraged your family to face?</span>
+<span name="question3" rows="5" class="story-textarea-flat">{{story.question3}}</textarea>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">What has it been like to socialize your child? Difficulties? Success stories?</span>
+<span name="question4" rows="5" class="story-textarea-flat">{{story.question4}}</textarea>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">Is your child in school? What has that experience been like?</span>
+<span name="question5" rows="5" class="story-textarea-flat">{{story.question5}}</textarea>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">Share a funny/silly/quirky artificial eye story (we all have them!)</span>
+<span name="question6" rows="5" class="story-textarea-flat">{{story.question6}}</textarea>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">Did your child undergo eye surgery? If so, what was that experience like? If not, why not? Was there a non-surgical alternative to treatment?</span>
+<span name="question7" rows="5" class="story-textarea-flat">{{story.question7}}</textarea>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">Have you or your child met other children and parents that are using artificial eyes?</span>
+<span name="question8" rows="5" class="story-textarea-flat">{{story.question8}}</textarea>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">If you can, please share a message to new parents of children needing artificial eyes. What advice could you give them? What do you wish you knew back then, when your child was first diagnosed?</span>
+<span name="question9" rows="5" class="story-textarea-flat">{{story.question9}}</textarea>
+</div>
+
+<div class="story-column">
+<span class="label-story-full">Have we missed any part of your story? Please feel free to share anything else in the space below:</span>
+<span name="question10" rows="5" class="story-textarea-flat">{{story.question10}}</span>
+</div>
+
+<div>
+    <div="story-btns">
     {{#if isOwner}}
-    <a href="/stories/edit/{{story._id}}">Edit</a>
-    <form action="/stories/delete/{{story._id}}" method="post">
-        <button type="submit">Delete</button>
-    </form>
+    <a href="/stories/edit/{{story._id}}"><button class="btn btn-dark story-btns">Edit STORY</button></a>
+    {{!-- <form action="/stories/delete/{{story._id}}" method="post">
+        <button type="submit" class="btn btn-dark story-btns">Delete Story</button>
+    </form> --}}
     {{/if}}
+    <a href="/stories"><button class="btn btn-dark story-btns">BACK TO STORIES</button></a>
+    </div>
+</div>
+
+</form>
+
+</div>
 </div>

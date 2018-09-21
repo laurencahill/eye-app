@@ -1,24 +1,72 @@
-<div class="title-bar">
-    <h1>Welcome to your Account Dashboard!</h1>
+
+<div class="nav-bar">
+    <div class="nav-logos">
+<img src="/images/logo.png" class="logo-inner" alt="">
+<img src="/images/tagline.png" class="tagline-inner" alt="">
+    </div>
+    <div class="nav-links">
+<a href="http://www.laurenseyes.com" class="btn-link nav-link" style="text-decoration: none">TLE Home </a>
+<a href="/stories" class="btn-link nav-link" style="text-decoration: none">Stories </a>
+<a href="/users/" class="btn-link nav-link" style="text-decoration: none">Dashboard </a>
+<a href="/logout" class="btn-link nav-link" style="text-decoration: none">Logout </a>
+</div>
 </div>
 
-<hr>
-<br>
-<form action="/users/child/update/{{theUser._id}}" method="POST" enctype="multipart/form-data">
-<div class="account-info">
-    <div class="section-title">
-    <h2>CHILD INFO</h2>
+<div class="page-content">
+<div class="container-info">
+
+    <div class="img-container">
+    <div class="img">
+    <img src="{{theUser.childImage}}">
     </div>
-    <label for=""><h2>Child Image: </h2></label>
-    <input type="file" name="photo" class="input">
-    <label for=""><h2>Full Name: </h2></label>
-    <input type="text" name="childName" class="input" value={{theUser.childName}}>
-    <label for=""><h2>Age: </h2></label>
-    <input type="number" name="childAge" class="input" value={{theUser.childAge}}>
-    <label for=""><h2>Eye Condition: </h2></label>
-    <input type="text" name="childCondition" class="input" value={{theUser.childCondition}}>
-    <label for=""><h2>Eye Affected: </h2></label>
-    <input type="text" name="childEye" class="input" value={{theUser.childEye}}>
-</div>
-<button>SAVE INFO</button>
+    </div>
+
+<form action="/users/child/update/{{theUser._id}}" method="POST" enctype="multipart/form-data">
+    <div class="account-info">
+       
+        <div class="section-title">
+        <span class="page-title">Child Information</span>
+        </div>
+
+        <div class="login-column">
+        <input type="file" name="photo" class="input apply-input">
+        </div>
+
+        <div class="login-column">
+        <span class="label-full">Name</span><input type="text" name="childName" class="input apply-input" value={{theUser.childName}}>
+        </div>
+
+        <div class="login-column">
+        <span class="label-full">Age</span><input type="number" name="childAge" class="input apply-input" value={{theUser.childAge}}>
+        </div>
+
+        <div class="login-column">
+            <span class="label-full">Eye Condition</span>
+            <select name="childCondition" class="apply-input" value={{theUser.childCondition}}>
+                <option value="">Select One</option>
+                <option value="microphthalmia">Microphthalmia</option>
+                <option value="anophthalmia">Anophthalmia</option>
+                <option value="cornealulcer">Corneal Ulcer</option>
+                <option value="glaucoma">Glaucoma</option>
+                <option value="retinoblastoma">Retinoblastoma</option>
+                <option value="damage">Injury/Damage</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="login-column">
+        <span class="label-full">Eye Affected</span>
+            <select name="childEye" class="apply-input"value={{theUser.childEye}}>
+                <option value="">Select One</option>
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+                <option value="both">Both</option>
+            </select>
+        </div>
+
+    </div>
+<button class="btn btn-dark btn-block" style="text-decoration: none">SAVE INFO</button>
 </form>
+
+</div>
+</div>

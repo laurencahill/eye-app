@@ -1,17 +1,14 @@
-
 <div class="nav-bar">
     <div class="nav-logos">
 <img src="/images/logo.png" class="logo-inner" alt="">
 <img src="/images/tagline.png" class="tagline-inner" alt="">
     </div>
-
-<a href="/stories" class="btn-link" style="text-decoration: none">Stories </a>
-<a href="/users/account" class="btn-link" style="text-decoration: none">Account </a>
-<a href="/logout" class="btn-link" style="text-decoration: none">Login </a>
+    <div class="nav-links">
+<a href="http://www.laurenseyes.com" class="btn-link nav-link" style="text-decoration: none">TLE Home </a>
+<a href="/stories" class="btn-link nav-link" style="text-decoration: none">Stories </a>
+<a href="/users/" class="btn-link nav-link" style="text-decoration: none">Dashboard </a>
+<a href="/logout" class="btn-link nav-link" style="text-decoration: none">Logout </a>
 </div>
-
-<div class="title-bar">
-    <h2>Welcome back,</h2><span class="welcome"> {{theUser.username}}</span>
 </div>
 
 <div class="page-content">
@@ -28,7 +25,7 @@
     </div>
 
     <div class="login-column">
-    <span class="label-full">Full Name</span><span class="apply-input">{{theUser.parentName}}</span>
+    <span class="label-full">Name</span><span class="apply-input">{{theUser.parentName}}</span>
     </div>
 
     <div class="login-column">
@@ -39,7 +36,7 @@
     <span class="label-full">Username</span><span class="apply-input">{{theUser.username}}</span>
     </div>
 
-     <div class="login-column">
+    <div class="login-column">
     <span class="label-full">Password</span><span class="apply-input">*******</span>
     </div>
 
@@ -59,7 +56,7 @@
     </div>
 
     <div class="login-column">
-    <span class="label-full">Full Name</span><span class="apply-input">{{theUser.childName}}</span>
+    <span class="label-full">Name</span><span class="apply-input">{{theUser.childName}}</span>
     </div>
 
     <div class="login-column">

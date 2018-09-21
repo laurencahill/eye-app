@@ -1,60 +1,78 @@
 
-<div>
+<div class="nav-bar">
+    <div class="nav-logos">
+<img src="/images/logo.png" class="logo-inner" alt="">
+<img src="/images/tagline.png" class="tagline-inner" alt="">
+    </div>
+    <div class="nav-links">
+<a href="http://www.laurenseyes.com" class="btn-link nav-link" style="text-decoration: none">TLE Home </a>
+<a href="/stories" class="btn-link nav-link" style="text-decoration: none">Stories </a>
+<a href="/users" class="btn-link nav-link" style="text-decoration: none">Dashboard </a>
+<a href="/logout" class="btn-link nav-link" style="text-decoration: none">Logout </a>
+</div>
+</div>
+
+<div class="page-content">
+
+<div class="story-container-info">
 
 <form action="/stories/update/{{story._id}}" method="POST">
     
-<div class="q-and-a">
-<label for=""><h4>Tell us about your child's eye condition and need for artificial eyes: </h4></label>
-<textarea form ="testformid" name="question1" id="taid" cols="35" wrap="soft">{{story.question1}}</textarea>
+<div class="story-column">
+<span class="label-story-full">Tell us about your child's eye condition and need for artificial eyes:</span>
+<textarea name="question1" rows="5" class="input story-textarea">{{story.question1}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>How has your experience been with medical eye care: pediatric opthamologists, neonatal surgeons, oculoplastic surgeons, ocularists, etc?</h4></label>
-<input type="text" name="question2" value="{{story.question2}}" class="input">
+<div class="story-column">
+<span class="label-story-full">How has your experience been with medical eye care: pediatric opthamologists, neonatal surgeons, oculoplastic surgeons, ocularists, etc?</span>
+<textarea name="question2" rows="5" class="input story-textarea">{{story.question2}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>What challenges has your child's eye condition encouraged your family to face?</h4></label>
-<input type="text" name="question3" value="{{story.question3}}" class="input">
+<div class="story-column">
+<span class="label-story-full">What challenges has your child's eye condition encouraged your family to face?</span>
+<textarea name="question3" rows="5" class="input story-textarea">{{story.question3}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>What has it been like to socialize your child? Difficulties? Success stories?</h4></label>
-<input type="text" name="question4" value="{{story.question4}}" class="input">
+<div class="story-column">
+<span class="label-story-full">What has it been like to socialize your child? Difficulties? Success stories?</span>
+<textarea name="question4" rows="5" class="input story-textarea">{{story.question4}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>Is your child in school? What has that experience been like?</h4></label>
-<input type="text" name="question5" value="{{story.question5}}" class="input">
+<div class="story-column">
+<span class="label-story-full">Is your child in school? What has that experience been like?</span>
+<textarea name="question5" rows="5" class="input story-textarea">{{story.question5}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>Share a funny/silly/quirky artificial eye story (we all have them!)</h4></label>
-<input type="text" name="question6" value="{{story.question6}}" class="input">
+<div class="story-column">
+<span class="label-story-full">Share a funny/silly/quirky artificial eye story (we all have them!)</span>
+<textarea name="question6" rows="5" class="input story-textarea">{{story.question6}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>Did your child undergo eye surgery? If so, what was that experience like? If not, why not? Was there a non-surgical alternative to treatment?</h4></label>
-<input type="text" name="question7" value="{{story.question7}}" class="input">
+<div class="story-column">
+<span class="label-story-full">Did your child undergo eye surgery? If so, what was that experience like? If not, why not? Was there a non-surgical alternative to treatment?</span>
+<textarea name="question7" rows="5" class="input story-textarea">{{story.question7}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>Have you or your child met other children and parents that are using artificial eyes?</h4></label>
-<input type="text" name="question8" value="{{story.question8}}" class="input">
+<div class="story-column">
+<span class="label-story-full">Have you or your child met other children and parents that are using artificial eyes?</span>
+<textarea name="question8" rows="5" class="input story-textarea">{{story.question8}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>If you can, please share a message to new parents of children needing artificial eyes. What advice could you give them? What do you wish you knew back then, when your child was first diagnosed?</h4></label>
-<input type="text" name="question9" value="{{story.question9}}" class="input">
+<div class="story-column">
+<span class="label-story-full">If you can, please share a message to new parents of children needing artificial eyes. What advice could you give them? What do you wish you knew back then, when your child was first diagnosed?</span>
+<textarea name="question9" rows="5" class="input story-textarea">{{story.question9}}</textarea>
 </div>
 
-<div class="q-and-a">
-<label for=""><h4>Have we missed any part of your story? Please feel free to share anything else in the space below:</h4></label>
-<input type="text" name="question10" value="{{story.question10}}" class="input">
+<div class="story-column">
+<span class="label-story-full">Have we missed any part of your story? Please feel free to share anything else in the space below:</span>
+<textarea name="question10" rows="5" class="input story-textarea">{{story.question10}}</textarea>
 </div>
 
-<button>Save Changes</button>
+<button class="btn btn-dark btn-block">Save Changes</button>
 
 </div>
 
 </form>
+
+</div>
+</div>

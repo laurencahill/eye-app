@@ -82,7 +82,7 @@ router.get("/signup/:id", (req, res, next)=>{
     .catch( err => console.log('error while rendering signup page', err))   
 })
 
-router.post("/signup/:id", uploadCloud.array('photo', 2), (req, res, next)=>{
+router.post("/signup/:id", (req, res, next)=>{
     const theUser = req.params.id
     const username = req.body.username
     const password = req.body.password
@@ -102,9 +102,7 @@ router.post("/signup/:id", uploadCloud.array('photo', 2), (req, res, next)=>{
           username:         req.body.username,
           password:         hashPass,
           parentName:       req.body.parentName,
-        //   parentImage:      req.file.url,
           childName:        req.body.childName,
-        //   childImage:       req.file.url,
           childAge:         req.body.childAge,
           childCondition:   req.body.childCondition,
           childEye:         req.body.childEye,

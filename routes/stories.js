@@ -117,7 +117,7 @@ router.get('/stories/:id', (req, res, next) => {
     } else {
         Story.findById(req.params.id)
         .then((theStory) => {
-console.log('works: ', theStory.owner.equals(req.user._id))
+
             if(theStory.owner.equals(req.user._id)){
                 isOwner = true;
             }
@@ -130,3 +130,4 @@ console.log('works: ', theStory.owner.equals(req.user._id))
 })
 
 module.exports = router;
+
