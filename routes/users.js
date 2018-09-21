@@ -93,7 +93,8 @@ const userID= req.params.id
 
 //post the edited user account info 
 router.post("/users/child/update/:id", uploadCloud.single('photo'), (req, res, next) => {
-    User.findByIdAndUpdate(req.params.id, {
+    User.findByIdAndUpdate(req.params.id,
+        {
         childImage:     req.file.url,
         childName:      req.body.childName,
         childAge:       req.body.childAge,
