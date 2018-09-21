@@ -72,6 +72,18 @@ a {
   width: 775px;
   margin: 25px; }
 
+.account-container-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px 55px 30px 55px;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 30px #B4B2B4);
+  width: 350px;
+  margin: 15px; }
+
 .story-container-sm {
   display: flex;
   justify-content: center;
@@ -275,6 +287,7 @@ a {
 .page-content {
   display: flex;
   flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   margin: 25px; }
 

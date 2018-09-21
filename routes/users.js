@@ -4,6 +4,8 @@ const User       = require('../models/User');
 const uploadCloud = require('../config/cloudinary.js');
 const multer    = require('multer');
 const Story = require('../models/Story');
+const bcrypt     = require('bcryptjs');
+const bcryptSalt = 10;
 
 //show the user dashboard page
 router.get('/users', (req, res, next)=>{
@@ -44,6 +46,7 @@ router.get("/users/edit-parent/:id", (req, res, next) => {
         res.redirect("/login")
     } else {
         User.findById(req.params.id)
+
         .then((userInfo) => {
             res.render('users/edit-parent', { theUser: userInfo })
         })
@@ -53,7 +56,7 @@ router.get("/users/edit-parent/:id", (req, res, next) => {
     }
 })
 
-//edit the user parent account info
+//edit the user child account info
 router.get("/users/edit-child/:id", (req, res, next) => {
     if (!req.user) {
         res.redirect("/login")
@@ -70,12 +73,15 @@ router.get("/users/edit-child/:id", (req, res, next) => {
 
 //post the edited user account info 
 router.post("/users/parent/update/:id", uploadCloud.single('photo'), (req, res, next) => {
-    User.findByIdAndUpdate(req.params.id, {
+
+   
+const userID= req.params.id
+    User.findByIdAndUpdate(userID, {
         parentImage:    req.file.url,
         parentName:     req.body.parentName,
         familyLocation: req.body.familyLocation,
         username:       req.body.username,
-        password:       req.body.password,
+        // password:     hashPass,
     })
     .then((response) => {
         res.redirect('/users/account')
